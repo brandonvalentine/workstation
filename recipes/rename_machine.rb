@@ -13,6 +13,6 @@ end
 
 ruby_block "test to see if hostname was set" do
   block do
-    raise "Setting of hostname failed" unless hostname == `scutil --get ComputerName`.chop
+    raise "Setting of hostname failed" unless hostname == `scutil --get ComputerName`
   end
 end
