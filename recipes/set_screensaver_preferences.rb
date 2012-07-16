@@ -3,8 +3,8 @@ execute "ask for password when screen is locked" do
   user WS_USER
 end
 
-execute "wait 60 seconds between screensaver & lock" do
-  command "defaults write com.apple.screensaver askForPasswordDelay -float 60"
+execute "wait 0 seconds between screensaver & lock" do
+  command "defaults write com.apple.screensaver askForPasswordDelay -float 0"
   user WS_USER
 end
 

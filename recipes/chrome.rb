@@ -1,6 +1,6 @@
-pivotal_workstation_package "Google Chrome" do
+workstation_package "Google Chrome" do
   dmg_name "googlechrome"
   source "https://dl-ssl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg"
-  checksum "bd85e06643abc3af5b1a049d8031c29f339f456c2d25852a7a4a1e6578b49792"
+  checksum "bd0167302ca226fb79a5dc2630d6a38a0cdc26c91ce787936a3fbb832af93072"
   action :install
 end

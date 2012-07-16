@@ -1,4 +1,4 @@
-include_recipe "pivotal_workstation::workspace_directory"
+include_recipe "workstation::workspace_directory"
 
 node['git_projects'].each do |repo_name, repo_address|
   execute "clone #{repo_name}" do

@@ -1,10 +1,46 @@
-include_recipe "pivotal_workstation::homebrew"
-include_recipe "pivotal_workstation::ack"
+include_recipe "workstation::ack"
+include_recipe "workstation::window_focus"
 
-brew_install "watch"
-brew_install "ssh-copy-id"
-brew_install "pstree"
-brew_install "tmux"
-brew_install "tree"
-brew_install "wget"
-brew_install "proctools"
+macports_package "watch" do
+  action :install
+end
+
+macports_package "pstree" do
+  action :install
+end
+
+macports_package "tree" do
+  action :install
+end
+
+macports_package "wget" do
+  action :install
+end
+
+macports_package "proctools" do
+  action :install
+end
+
+macports_package "htop" do
+  action :install
+end
+
+macports_package "mtr" do
+  action :install
+end
+
+macports_package "pwgen" do
+  action :install
+end
+
+macports_package "unrar" do
+  action :install
+end
+
+macports_package "s3cmd" do
+  action :install
+end
+
+macports_package "w3m" do
+  action :install
+end

@@ -1,1 +1,1 @@
-pivotal_workstation_bash_profile_include "ps1"
+workstation_bash_profile_include "ps1"

@@ -1,1 +1,1 @@
-pivotal_workstation_bash_profile_include "git_completion"
+workstation_bash_profile_include "git_completion"

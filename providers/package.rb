@@ -18,7 +18,7 @@
 #
 
 def load_current_resource
-  @dmgpkg = Chef::Resource::PivotalWorkstationPackage.new(new_resource.name)
+  @dmgpkg = Chef::Resource::WorkstationPackage.new(new_resource.name)
   @dmgpkg.app(new_resource.app)
   Chef::Log.debug("Checking for application #{new_resource.app}")
   @dmgpkg.installed(installed?)

@@ -1,1 +1,1 @@
-pivotal_workstation_bash_profile_include "better_history"
+workstation_bash_profile_include "better_history"

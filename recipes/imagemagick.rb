@@ -1,3 +1,4 @@
-include_recipe "pivotal_workstation::homebrew"
-
-brew_install "imagemagick"
+macports_package "ImageMagick" do
+  action :install
+  variants "+graphviz +jbig +jpeg2 +lqr +mpeg +wmf +no_x11 +perl"
+end

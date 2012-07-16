@@ -1,3 +1,3 @@
-include_recipe "pivotal_workstation::homebrew"
-
-brew_install "qt"
+macports_package "qt4-mac" do
+  action :install
+end

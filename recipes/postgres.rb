@@ -1,48 +1,57 @@
-include_recipe "pivotal_workstation::homebrew"
+dbversion = "91"
+dbdir = "/opt/local/var/db/postgresql#{dbversion}"
+dbuser = "postgres"
+dbgrp = "postgres"
 
 run_unless_marker_file_exists("postgres") do
 
-  plist_path = File.expand_path('org.postgresql.postgres.plist', File.join('~', 'Library', 'LaunchAgents'))
+  plist_path = File.expand_path("org.macports.postgresql#{dbversion}-server.plist", File.join('/', 'Library', 'LaunchAgents'))
   if File.exists?(plist_path)
     log "postgres plist found at #{plist_path}"
     execute "unload the plist (shuts down the daemon)" do
       command %'launchctl unload -w #{plist_path}'
-      user WS_USER
     end
   else
     log "Did not find plist at #{plist_path} don't try to unload it"
   end
 
-#    blow away default image's data directory
-  directory "/usr/local/var/postgres" do
-    action :delete
-    recursive true
+  # blow away default image's data directory
+  # this seems like a bad idea just because I removed the marker file
+  #directory "/opt/local/var/db/postgresql#{dbversion}" do
+  #  action :delete
+  #  recursive true
+  #end
+
+  macports_package "postgresql#{dbversion}-server" do
+    action :purge
   end
 
-  # brew_remove "postgresql"
-  brew_install "postgresql"
-
-  execute "create the database" do
-    command %'initdb -U postgres --encoding=utf8 --locale=en_US /usr/local/var/postgres'
-    user WS_USER
+  macports_package "postgresql#{dbversion}-server" do
+    action :install
   end
 
-  launch_agents_path = File.expand_path('.', File.join('~','Library', 'LaunchAgents'))
-  directory launch_agents_path do
-    action :create
-    recursive true
-    owner WS_USER
+  macports_package "postgresql_select" do
+    action :install
   end
 
+  execute "select default postgres version" do
+    command "port select postgresql postgresql#{dbversion}"
+    not_if "port select --show postgresql | grep \"The currently selected version for 'postgresql' is 'postgresql#{dbversion}'.\""
+  end
 
-  execute "copy over the plist" do
-    command %'cp /usr/local/Cellar/postgresql/9.*/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents/'
-    user WS_USER
+  execute "create the database directories" do
+    command "mkdir -p #{dbdir} && chown #{dbuser}:#{dbgrp} #{dbdir}"
+    not_if { File.directory? dbdir }
+  end
+
+  execute "initialize the database" do
+    command "initdb --encoding=utf8 --locale=en_US #{dbdir}"
+    user dbuser
+    not_if { File.directory? dbdir }
   end
 
   execute "start the daemon" do
-    command %'launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
-    user WS_USER
+    command "launchctl load -w /Library/LaunchAgents/org.macports.postgresql#{dbversion}-server.plist"
   end
 
   ruby_block "wait four seconds for the database to start" do
@@ -51,10 +60,6 @@ run_unless_marker_file_exists("postgres") do
     end
   end
 
-  execute "create the database" do
-    command "createdb -U postgres"
-    user WS_USER
-  end
   # "initdb /tmp/junk.$$" will fail unless you modify sysctl variables
   # Michael Sofaer says that these are probably the right settings:
   #   kern.sysv.shmall=65535
@@ -90,5 +95,3 @@ block do
     end
   end
 end
-
-

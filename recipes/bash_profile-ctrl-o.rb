@@ -1,1 +1,1 @@
-pivotal_workstation_bash_profile_include "ctrl-o"
+workstation_bash_profile_include "ctrl-o"

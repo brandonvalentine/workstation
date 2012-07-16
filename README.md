@@ -1,3 +1,19 @@
+# Where to start
+## Added bval 2012-07-08
+### TODO: Come up with a catchier name for the project.
+
+1. Walk through Apple setup wizard, input iCloud credentials, and login to new machine.
+2. Open the Mac App Store and install all of your purchases, including Xcode.
+3. Open Xcode, go to Preferences->Downloads, and install the Command Line Tools.
+4. Open Terminal, and `sudo gem install soloist`
+5. `export PATH="/Applications/Xcode.app/Contents/Developer/usr/libexec/git-core":$PATH`
+6. `mkdir -p $HOME/chef/cookbooks/workstation`
+6. `git clone git@github.com:brandonvalentine/workstation.git $HOME/chef/cookbooks/workstation`
+7. `cp $HOME/chef/cookbooks/workstation/soloistrc.example $HOME/.soloistrc`
+8. edit $HOME/.soloistrc if you prefer
+9. `soloist`
+
+---
 Pivotal Workstation: A Repeatable, Documented, Decomposable, Shareable and Iterative OSX (ruby) Development Environment
 
 # Why?

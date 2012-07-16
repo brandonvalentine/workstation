@@ -31,7 +31,7 @@ end
 
 # If there is no github_project defined, we will use the name of the machine as the SSH key,
 # therefore make sure we have a name first.
-include_recipe "pivotal_workstation::rename_machine" unless node["github_project"]
+include_recipe "workstation::rename_machine" unless node["github_project"]
 
 execute "add github to knownhosts" do
   user WS_USER

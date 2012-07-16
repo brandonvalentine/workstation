@@ -3,6 +3,7 @@ unless File.exists?(node["github_for_mac_app_path"])
   remote_file "#{Chef::Config[:file_cache_path]}/github_for_mac.zip" do
     source node["github_for_mac_download_uri"]
     owner WS_USER
+    mode 0644
   end
 
   execute "unzip github_for_mac" do
