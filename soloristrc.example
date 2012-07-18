@@ -47,6 +47,7 @@ recipes:
 - workstation::mouse_locator
 #- workstation::mysql
 - workstation::node_js
+- workstation::lessc
 - workstation::openssh
 - workstation::osx_updates
 - workstation::pg_admin
