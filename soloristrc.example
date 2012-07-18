@@ -19,6 +19,7 @@ recipes:
 - workstation::ca_certs_to_match_heroku
 #- workstation::charles_proxy
 - workstation::chrome
+- workstation::canary
 - workstation::commandq
 - workstation::controlplane
 - workstation::create_var_chef_cache
