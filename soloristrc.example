@@ -79,3 +79,4 @@ recipes:
 - workstation::window_focus
 - workstation::workspace_directory
 - workstation::ffmpeg
+- workstation::default_gemset
