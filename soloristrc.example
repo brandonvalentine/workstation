@@ -1,6 +1,7 @@
 cookbook_paths:
 - ./chef/cookbooks/
 recipes:
+- workstation::rename_machine
 - workstation::macports
 - workstation::bash_path_order
 - workstation::bash_profile-better_history
@@ -53,10 +54,9 @@ recipes:
 - workstation::osx_updates
 - workstation::pg_admin
 - workstation::plex
-#- workstation::postgres
+- workstation::postgres
 - workstation::qt
 - workstation::redis
-- workstation::rename_machine
 - workstation::rvm
 - workstation::safari_preferences
 - workstation::screen_sharing_app
@@ -79,6 +79,10 @@ recipes:
 - workstation::window_focus
 - workstation::workspace_directory
 - workstation::ffmpeg
+- workstation::pixelmator
 - workstation::default_gemset
 - workstation::php
 - workstation::apache_directory_studio
+- workstation::mongodb
+- workstation::microsoft_fonts
+- workstation::carbon_copy_cloner
