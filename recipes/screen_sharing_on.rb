@@ -1,5 +1,6 @@
 execute "Enabling Screen Sharing for All Users" do
-  command "/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -off -restart -agent -privs -all -allowAccessFor -allUsers"
+  command "launchctl load -w /System/Library/LaunchDaemons/com.apple.screensharing"
+  not_if "launchctl list com.apple.screensharing"
 end
 
 ruby_block "test to see if screen-sharing is enabled" do
