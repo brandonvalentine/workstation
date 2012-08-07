@@ -86,3 +86,4 @@ recipes:
 - workstation::mongodb
 - workstation::microsoft_fonts
 - workstation::carbon_copy_cloner
+- workstation::afpovertcp_on
