@@ -1,4 +1,4 @@
-hostname = node["hostname"]
+hostname = node["node_hostname"]
 
 # The scutil commands need to run as root, unless
 # you're logged into the console, but we can't be sure of that.
@@ -13,6 +13,6 @@ end
 
 ruby_block "test to see if hostname was set" do
   block do
-    raise "Setting of hostname failed" unless hostname == `scutil --get ComputerName`
+    raise "Setting of hostname failed" unless hostname == `scutil --get ComputerName`.chop
   end
 end
