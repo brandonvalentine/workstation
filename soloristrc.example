@@ -88,3 +88,5 @@ recipes:
 - workstation::carbon_copy_cloner
 - workstation::afpovertcp_on
 - workstation::pallet
+- workstation::propane
+- workstation::google_hangout
