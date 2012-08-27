@@ -92,3 +92,4 @@ recipes:
 - workstation::microsoft_rdc
 - workstation::adobe_air
 - workstation::pallet
+- workstation::wmj
