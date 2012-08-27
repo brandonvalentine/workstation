@@ -47,7 +47,7 @@ recipes:
 - workstation::mailplane
 - workstation::menumeters
 - workstation::mouse_locator
-#- workstation::mysql
+- workstation::mysql
 - workstation::node_js
 - workstation::lessc
 - workstation::openssh
@@ -87,6 +87,8 @@ recipes:
 - workstation::microsoft_fonts
 - workstation::carbon_copy_cloner
 - workstation::afpovertcp_on
-- workstation::pallet
 - workstation::propane
 - workstation::google_hangout
+- workstation::microsoft_rdc
+- workstation::adobe_air
+- workstation::pallet
