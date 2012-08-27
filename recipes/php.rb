@@ -69,3 +69,9 @@ end
 macports_package "php54-zip" do
   action :install
 end
+
+macports_package "pear-PEAR" do
+  action :install
+end
+
+workstation_bash_profile_include "php"
