@@ -18,3 +18,4 @@
 #
 default['workstation']['base_dir'] = "/Applications"
 default['workstation']['cache_dir'] = Chef::Config['file_cache_path']
+default['workstation']['weather_city'] = "nashvilletn2"
