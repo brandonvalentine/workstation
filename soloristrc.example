@@ -93,3 +93,6 @@ recipes:
 - workstation::adobe_air
 - workstation::pallet
 - workstation::wmj
+- workstation::tunnelblick
+- workstation::vlc
+- workstation::weather-screensaver
