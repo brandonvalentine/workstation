@@ -32,6 +32,11 @@ run_unless_marker_file_exists(marker_version_string_for("rvm")) do
   end
 end
 
+# necessary to install ruby 1.8.7 on OS X 10.7+
+macports_package "apple-gcc42" do
+  action :install
+end
+
 node["rvm"]["rubies"].each do |version, options|
   rvm_ruby_install version do
     options options
