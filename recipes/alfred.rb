@@ -1,8 +1,8 @@
 workstation_package "Alfred" do
   volumes_dir "Alfred.app"
-  source "http://rwc.cachefly.net/alfred_1.2_220.dmg"
+  source "http://cachefly.alfredapp.com/alfred_1.3.1_261.dmg"
   action :install
-  checksum "212d1d66706561776a1d480a1bbb4d05c0c09a3fa94888c720f6316c721ccee0"
+  checksum "c951c4dc05ff1091359358d710142cabef2c190be41f799244669f879cff7e80"
 end
 
 # start up on login
