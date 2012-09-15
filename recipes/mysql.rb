@@ -11,7 +11,7 @@ end
 run_unless_marker_file_exists("mysql") do
   execute "unload mysql via launchd" do
     command "port unload mysql#{dbversion}-server"
-    only_if "launchctl list org.macports.postgresql#{dbversion}-server"
+    only_if "launchctl list org.macports.mysql#{dbversion}-server"
   end
 
   # blow away default image's data directory
