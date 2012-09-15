@@ -2,7 +2,7 @@ dbversion = "51"
 dbdir = "/opt/local/var/db/mysql#{dbversion}"
 
 # need to make this more robust later to accomodate post 10.8.0, but it'll do for now
-unless system("uname -r") == "10.8.0"
+unless `uname -r`.chop == "12.1.0"
   dbuser = "mysql"
 else
   dbuser = "_mysql"
