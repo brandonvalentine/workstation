@@ -62,13 +62,13 @@ run_unless_marker_file_exists("postgres") do
 
   workstation_sysctl "kern.sysv.shmall" do
     name "kern.sysv.shmall"
-    value "65535"
+    value 65535
     save false
   end
 
   workstation_sysctl "kern.sysv.shmmax" do
     name "kern.sysv.shmmax"
-    value "16777216"
+    value 16777216
     save false
   end
 
