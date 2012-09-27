@@ -56,7 +56,7 @@ run_unless_marker_file_exists("mysql") do
 
   execute "start the mysql server" do
     command "port load mysql51-server"
-    not_if system("ls /opt/local/var/run/mysql51/mysqld.sock")
+    not_if "ls /opt/local/var/run/mysql51/mysqld.sock"
   end
 
   ruby_block "Checking that mysql is running" do
