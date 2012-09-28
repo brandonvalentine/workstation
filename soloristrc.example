@@ -97,3 +97,4 @@ recipes:
 - workstation::vlc
 - workstation::weather-screensaver
 - workstation::bartender
+- workstation::ievms
