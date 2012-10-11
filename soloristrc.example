@@ -98,3 +98,4 @@ recipes:
 - workstation::weather-screensaver
 - workstation::bartender
 - workstation::ievms
+- workstation::snx
