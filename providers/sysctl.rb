@@ -90,13 +90,20 @@ action :write do
       # dupes always take the last called setting. Enabling multipe redefines
       # but only resolving to a single setting in the config
       # NOTE: I am assuming the collection is in order seen.
-      r[resource.name] = "'#{resource.value}'\n" if resource.action.include?(:write)
+      if resource.action.include?(:write)
+        case resource.value.class
+          when Integer
+            r[resource.name] = resource.value
+          default
+            r[resource.name] = "'#{resource.value}'"
+        end
+      end
       resource.updated_by_last_action true # kinda a cludge, but oh well 
     end
   end
   
   # flatten entries
-  entries << r.sort.map { |k,v| "#{k}=#{v}" }.join
+  entries << r.sort.map { |k,v| "#{k}=#{v}\n" }.join
 
   # put those in the config file
   @config.content entries
