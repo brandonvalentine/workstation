@@ -1,7 +1,9 @@
 cookbook_paths:
-- ./chef/cookbooks/
+- .cookbooks/
 recipes:
+- workstation::create_var_chef_cache
 - workstation::rename_machine
+- workstation::java
 - workstation::macports
 - workstation::bash_path_order
 - workstation::bash_profile-better_history
@@ -11,6 +13,7 @@ recipes:
 - workstation::bash_profile-no_sudo_gem_install
 - workstation::bash_profile-ps1
 - workstation::global_environment_variables
+- workstation::unix_essentials
 - workstation::1password
 - workstation::ack
 - workstation::active_corners
@@ -23,7 +26,6 @@ recipes:
 - workstation::canary
 - workstation::commandq
 - workstation::controlplane
-- workstation::create_var_chef_cache
 - workstation::defaults_fast_key_repeat_rate
 - workstation::disable_front_row
 - workstation::dock_preferences
@@ -42,7 +44,6 @@ recipes:
 - workstation::imagemagick
 - workstation::input_on_login
 - workstation::inputrc
-- workstation::java
 - workstation::locate_on
 - workstation::mailplane
 - workstation::menumeters
@@ -73,13 +74,11 @@ recipes:
 - workstation::take_five
 - workstation::terminal_preferences
 - workstation::timemachine_preferences
-- workstation::unix_essentials
 - workstation::vim
 - workstation::virtualbox
 - workstation::window_focus
 - workstation::workspace_directory
 - workstation::ffmpeg
-- workstation::pixelmator
 - workstation::default_gemset
 - workstation::php
 - workstation::apache_directory_studio
@@ -87,7 +86,7 @@ recipes:
 - workstation::microsoft_fonts
 - workstation::carbon_copy_cloner
 - workstation::afpovertcp_on
-- workstation::propane
+#- workstation::propane
 - workstation::google_hangout
 - workstation::microsoft_rdc
 - workstation::adobe_air
