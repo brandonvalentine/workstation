@@ -98,3 +98,4 @@ recipes:
 - workstation::bartender
 - workstation::ievms
 - workstation::snx
+- workstation::mamp
