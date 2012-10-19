@@ -1,5 +1,5 @@
 dbversion = "91"
-dbdir = "/opt/local/var/db/postgresql#{dbversion}/defaultdb"
+dbdir = "/opt/local/var/db/postgresql#{dbversion}"
 dbuser = "postgres"
 dbgrp = "postgres"
 
@@ -22,6 +22,7 @@ run_unless_marker_file_exists("postgres") do
 
   # blow away default image's data directory
   # this seems like a bad idea just because I removed the marker file
+  # but it's here if you want to uncomment it
   #directory dbdir do
   #  action :delete
   #  recursive true
@@ -56,8 +57,8 @@ run_unless_marker_file_exists("postgres") do
   end
 
   execute "create the database directories" do
-    command "mkdir -p #{dbdir} && chown #{dbuser}:#{dbgrp} #{dbdir}"
-    not_if { File.directory? dbdir }
+    command "mkdir -p #{dbdir}/defaultdb && chown -R #{dbuser}:#{dbgrp} #{dbdir}"
+    not_if { File.directory? "#{dbdir}/defaultdb" }
   end
 
   workstation_sysctl "kern.sysv.shmall" do
@@ -73,9 +74,9 @@ run_unless_marker_file_exists("postgres") do
   end
 
   execute "initialize the database" do
-    command "initdb --encoding=utf8 --locale=en_US #{dbdir}"
+    command "initdb --encoding=utf8 --locale=en_US #{dbdir}/defaultdb"
     user dbuser
-    not_if { Dir.entries(dbdir).count > 2 }
+    not_if { Dir.entries("#{dbdir}/defaultdb").count > 2 }
   end
 
   execute "start the daemon" do
