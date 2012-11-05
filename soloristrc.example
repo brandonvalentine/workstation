@@ -31,6 +31,7 @@ recipes:
 - workstation::dock_preferences
 - workstation::dropbox
 - workstation::finder_display_full_path
+- workstation::finder_show_all_files
 - workstation::firefox
 - workstation::function_keys
 - workstation::gabble
