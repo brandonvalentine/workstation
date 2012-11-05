@@ -100,3 +100,4 @@ recipes:
 - workstation::ievms
 - workstation::snx
 - workstation::mamp
+- workstation::induction
