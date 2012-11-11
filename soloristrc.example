@@ -101,3 +101,4 @@ recipes:
 - workstation::snx
 - workstation::mamp
 - workstation::induction
+- workstation::moom
