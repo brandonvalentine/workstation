@@ -102,3 +102,4 @@ recipes:
 - workstation::mamp
 - workstation::induction
 - workstation::moom
+- workstation::delivery_status
