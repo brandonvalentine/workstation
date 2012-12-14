@@ -103,3 +103,4 @@ recipes:
 - workstation::induction
 - workstation::moom
 - workstation::delivery_status
+- workstation::paparazzi
