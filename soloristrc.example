@@ -104,3 +104,4 @@ recipes:
 - workstation::moom
 - workstation::delivery_status
 - workstation::paparazzi
+- workstation::calibre
