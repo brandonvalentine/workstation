@@ -7,5 +7,6 @@ unless File.exists?("/Applications/Remote Desktop Connection.app")
     action :install
     type "mpkg"
     checksum "4ebe551c9ee0e2da6b8f746be13c2df342c6f14cd3fbedbf2ab490f09b44616f"
+    user WS_USER
   end
 end

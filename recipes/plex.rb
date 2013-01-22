@@ -3,6 +3,7 @@ workstation_package "Plex Media Server" do
   source "http://plex-downloads.s3.amazonaws.com/0.9.6.3/Releases/MacOSX-SL/PlexMediaServer-0.9.6.3.140-9c9f5ce-OSX.dmg"
   action :install
   checksum "c8188ba97636dbc92f695b3efb8c5a8df97c0b76d27bc96c5cdb45c4811d08cb"
+  user WS_USER
 end
 
 unless File.exists?("/Applications/Plex.app")

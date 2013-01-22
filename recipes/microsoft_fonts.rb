@@ -7,5 +7,6 @@ unless File.exists?("/Library/Fonts/Microsoft")
     action :install
     type "pkg"
     checksum "aba028cf152ca31d01e12f327a2fd9935e9159093873d7880364f1e383308d52"
+    user WS_USER
   end
 end

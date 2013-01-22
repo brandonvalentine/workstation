@@ -8,10 +8,12 @@ unless File.exists?("/Applications/MAMP.app")
   
   execute "Unzip MAMP" do
     command "unzip -o #{Chef::Config[:file_cache_path]}/MAMP_PRO.zip MAMP_2.1.1.pkg -d #{Chef::Config[:file_cache_path]}/"
+    user WS_USER
   end
 
   execute "Install MAMP" do
     command "installer -pkg #{Chef::Config[:file_cache_path]}/MAMP_2.1.1.pkg -target /"
+    user WS_USER
   end
 
 end

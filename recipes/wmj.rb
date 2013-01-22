@@ -11,5 +11,6 @@ unless File.exists?("/Applications/Workamajig.app")
 
   execute "install workamajig app" do
     command '/Applications/Adobe/Flash\ Player/AddIns/airappinstaller/airappinstaller -silent ' + wmj_file
+    user WS_USER
   end
 end

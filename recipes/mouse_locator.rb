@@ -8,7 +8,6 @@ unless File.exists?(node['mouse_locator_dst'])
 
   execute "mount mouse_locator dmg" do
     command "hdid #{Chef::Config[:file_cache_path]}/mouse_locator.dmg"
-    user WS_USER
   end
 
   # We're bypassing the installer.app because it requires intervention.
@@ -38,7 +37,6 @@ unless File.exists?(node['mouse_locator_dst'])
 
   execute "unmount dmg" do
     command "hdiutil detach #{Regexp.escape(node["mouse_locator_dmg_mnt"])}"
-    user WS_USER
   end
 
   execute "Activate Mouse Locator" do

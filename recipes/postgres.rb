@@ -106,3 +106,7 @@ block do
     end
   end
 end
+
+macports_package "p5-pgtop" do
+  action :install
+end

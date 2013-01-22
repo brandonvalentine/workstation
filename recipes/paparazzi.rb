@@ -3,6 +3,7 @@ workstation_package "Paparazzi!" do
   source "http://derailer.org/paparazzi/Paparazzi!%200.6.5.dmg"
   action :install
   checksum "2362f56853d14fc02c599e3ed5091ec4f0bdd126beb9311a60fc1ca0a4d83662"
+  user WS_USER
 end
 
 # start up on login

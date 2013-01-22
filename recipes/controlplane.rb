@@ -2,6 +2,7 @@ workstation_package "ControlPlane" do
   source "http://www.controlplaneapp.com/download/1.2.3?ref=dlbutton"
   action :install
   checksum "37f93d3a3a17a6e2f24447f0bc74c7e89ec1581ca52e5970960544858c86f909"
+  user WS_USER
 end
 
 # start up on login

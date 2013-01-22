@@ -17,6 +17,7 @@ unless File.exists?("/Applications/Adobe/Flash\ Player/AddIns/airappinstaller/ai
 
   execute "install adobe air" do
     command adobe_air_installer + ' -silent -eulaAccepted'
+    user WS_USER
   end
 
   execute "unmount adobe air dmg" do

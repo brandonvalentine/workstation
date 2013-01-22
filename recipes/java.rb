@@ -5,4 +5,5 @@ workstation_package "JavaForOSX" do
   type "pkg"
   package_id "com.apple.pkg.JavaForMacOSX107"
   checksum "7c878d0830d9c51385bf87642fca641b624f3eb5e5b41e039bc1bf86cb50c1e4"
+  user WS_USER
 end

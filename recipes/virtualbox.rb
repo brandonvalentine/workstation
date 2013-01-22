@@ -4,4 +4,5 @@ workstation_package "VirtualBox" do
   action :install
   type "mpkg"
   package_id "org.virtualbox.pkg.virtualbox"
+  user WS_USER
 end
